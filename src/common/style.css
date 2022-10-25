@@ -1,79 +1,171 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
-.main-global{
+
+.main-global {
     display: flex;
-    background-color: rgb(248, 213, 213);
-    width: 100%;  
-}
-.main{
+    background-color: rgb(241, 85, 85);
     width: 100%;
+    height: 100vh;
 }
-.sideBar{
+.sideBar {
     width: 200px;
     background-color: #5f9ebb;
-    border-right: 2px solid #fff;
+    border-right:2px solid #3f6c81;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1px;
 }
-.header-main-conteudo{
+
+.logo-identificador {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3f6c81;
+    font-size: 36px;
+    text-transform: capitalize;
+    background-color: #fff;
+    margin-top: 10px;
+}
+nav.menu-principal{
+    width: 100%;
+    margin-top: 30px;
+}
+.menu-principal ul{
+    list-style: none;
+
+}
+.menu-principal ul li{
+    margin-bottom: 4px;
+    
+}
+.menu-principal ul li a{
+    font-weight:bold;
+    text-align:left;
+    color:#fff;
+    font-size: 12px;
+    line-height: 32px;
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 20px;
+    /* background-color:#6eb3d3; */
+    border-radius: 10px 2px;
+    border-bottom: solid 0.5px #FFF;
+    box-shadow: 0px 3px 5px -2px #3f6c81;
+
+}
+
+.menu-principal li a:hover{
+    background-color:#87c5e4;
+
+}
+.main {
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    
+    
+}
+
+.header-main-conteudo {
     background-color: #3f6c81;
     height: 50px;
     position: sticky;
     top: 0px;
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: center;
     padding: 5px;
 }
-.header-main-conteudo a{
-text-decoration: none;
-color:white;
-cursor: pointer;
-font-weight: bolder;
-font-size: 12px;
-background-color: #5f9ebb;
-border-radius: 10px;
-justify-content: center;
-align-items: center;
-height:20px;
-display: flex;
-padding: 10px;
+
+a.btn {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: transparent;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    display: flex;
+    padding: 10px;
+    border: 0.5px #fff solid;
 }
-.main-conteudo{
-    background-color: #F5FFFA;
+
+.main-conteudo {
+    background-color: #F5F5F5;
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .titulo-list{
-    pointer-events: none;
+    display: flex;
     position: sticky;
     top:50px;
-    margin: 0;
-}
-.list-med{
-    display: flex;
-    background-color:#F0F8FF;
-    margin-bottom:5px;
+    margin-bottom: 5px;
     width: 100%;
     height: auto;
     justify-content: center;
     align-items: center;
-    
-}
-.list-med::after{
- content: '\2714';
-width: 10px;
-height: 10px;
-padding-right:10px;
-color: #5f9ebb;
+    padding: 0 2%;
+    background-color: #6eb3d3;
+    box-shadow: 0px 3px 5px -2px rgba(0,0,0,0.75);
 
 }
-.list-med:hover{
+.titulo-list-detalhe{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    width:70px;
+    padding: 10px;
+    margin: 3px 0px;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 12px;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    
+}
+
+.list-med {
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 5px;
+    width: 98%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    border: solid 0.5px #c9c9c9;
+    border-radius: 10px;
+ 
+}
+
+
+.list-med:hover {
     background-color: #d3e9fd;
 }
-.list-med-detalhe{
+
+.list-med-detalhe {
     display: flex;
-    flex:1;
+    flex: 1;
     justify-content: center;
     align-items: center;
     width: 70px;
@@ -81,11 +173,11 @@ color: #5f9ebb;
     margin: 3px 0px;
     color: rgb(0, 52, 97);
     font-size: 12px;
-     flex-wrap: wrap;
-     border-radius: 5px;
-}   
-.list-med-detalhe:hover{
+    flex-wrap: wrap;
+    border-radius: 5px;
+}
+
+.list-med-detalhe:hover {
     background-color: aliceblue;
     overflow: visible;
-
 }
