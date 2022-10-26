@@ -19,46 +19,50 @@ include_once './query.php';
   <div class="sideBar">
     <div class="logo-identificador">
       <?php
-       print_r(substr($_SESSION['login'], 0, 1));
+      print_r(substr($_SESSION['login'], 0, 1));
       ?>
-      </div>
+    </div>
     <nav class="menu-principal">
       <ul>
-        <li><a href="http://">ESTOQUE</a></li>
-        <li><a href="http://">ENTRADA</a></li>
-        <li><a href="http://">SAIDA</a></li>
-        <li><a href="http://">CADASTRO</a></li>
+        <li><a href="http://"><img src="../assets/images/icons-menu/estoque.png" class="icon">ESTOQUE </a></li>
+        <li><a href="http://"><img src="../assets/images/icons-menu/entrada.png" class="icon">ENTRADA</a></li>
+        <li><a href="http://"><img src="../assets/images/icons-menu/saida.png" class="icon">SAIDA</a></li>
+        <li><a href="http://"><img src="../assets/images/icons-menu/cadastro.png" class="icon">CADASTRO</a>
+          <ul class="menu-principal-sub">
+            <li><a href="http://"><img src="../assets/images/icons-submenu/add-medicamento.png" class="iconsub"> Cad. Medicamento</a></li>
+            <li><a href="http://"><img src="../assets/images/icons-submenu/add-funcionario.png" class="iconsub">Cad. Funcionario</a></li>
+            <li><a href="http://" ><img src="../assets/images/icons-submenu/add-unidade-saude.png" class="iconsub"> Cad. Unidade Saude</a></li>
+            <li><a href="http://"><img src="../assets/images/icons-submenu/add-usuario.png" class="iconsub">Cad. Usuario</a></li>
+          </ul>
+        </li>
       </ul>
-    </nav>  
+    </nav>
 
-    </div>
+  </div>
   <div class="main">
     <div class="header-main-conteudo">
-      
+
       <a class="btn" href="http://localhost/appCrontrolEstoque/src/pages/logout.php">SAIR</a>
     </div>
     <div class="main-conteudo">
 
       <div class="titulo-list">
-        <div class="titulo-list-detalhe">ID</div>
         <div class="titulo-list-detalhe">Denominação</div>
         <div class="titulo-list-detalhe">Concentração Composição</div>
-        <div class="titulo-list-detalhe">ID</div>
-        <div class="titulo-list-detalhe">ID</div>
-        <div class="titulo-list-detalhe">ID</div>
-        <div class="titulo-list-detalhe">ID</div>
-        <div class="titulo-list-detalhe">ID</div>
-        <div class="titulo-list-detalhe">ID</div>
-        <div class="titulo-list-detalhe">ID</div>
+        <div class="titulo-list-detalhe">Data Entrada</div>
+        <div class="titulo-list-detalhe">Data Vencimento</div>
       </div>
+        
+      
       <?php
       // retorna o estoque por status de movimentação.
       foreach (buscaEstoque(1) as $key => $value) {
         print_r('<div class="list-med">');
         foreach ($value as $val) {
-          print_r('<div class="list-med-detalhe">' . $val . '</div>');
+          print_r('<div class="list-med-detalhe">' .ucwords($val) . '</div>');
         }
         print_r('</div>');
+        
       }
       ?>
     </div>

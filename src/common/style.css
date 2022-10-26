@@ -9,10 +9,11 @@
     display: flex;
     background-color: rgb(241, 85, 85);
     width: 100%;
-    height: 100vh;
+    min-height:100vh;
 }
 .sideBar {
     width: 200px;
+    height: auto;
     background-color: #5f9ebb;
     border-right:2px solid #3f6c81;
     display: flex;
@@ -41,19 +42,17 @@ nav.menu-principal{
 }
 .menu-principal ul{
     list-style: none;
-
 }
 .menu-principal ul li{
-    margin-bottom: 4px;
-    
+    margin-bottom: 4px;    
 }
-.menu-principal ul li a{
+.menu-principal ul li a, .menu-principal-sub li a{
     font-weight:bold;
     text-align:left;
     color:#fff;
     font-size: 12px;
-    line-height: 32px;
-    display: block;
+    line-height: 24px;
+    display:flex;
     text-decoration: none;
     padding: 10px;
     padding-left: 20px;
@@ -61,7 +60,27 @@ nav.menu-principal{
     border-radius: 10px 2px;
     border-bottom: solid 0.5px #FFF;
     box-shadow: 0px 3px 5px -2px #3f6c81;
+    align-items: center; 
+}
+.menu-principal-sub{
+    overflow: hidden;
+    height: 0px;
+}
+.menu-principal li:hover .menu-principal-sub{
+    overflow: hidden;
+    height: auto;    
+}
+.menu-principal-sub li a{
+    background-color: #3f6c81;
+}
 
+.menu-principal ul li a img.icon{
+    margin-right: 15px;
+width: 35px;
+}
+.menu-principal-sub img.iconsub{
+    margin-right: 15px;
+width: 35px;
 }
 
 .menu-principal li a:hover{
@@ -70,11 +89,9 @@ nav.menu-principal{
 }
 .main {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display:flex;
     flex-direction: column;
-    
-    
 }
 
 .header-main-conteudo {
@@ -117,7 +134,7 @@ a.btn {
 .titulo-list{
     display: flex;
     position: sticky;
-    top:50px;
+    top:47px;
     margin-bottom: 5px;
     width: 100%;
     height: auto;
