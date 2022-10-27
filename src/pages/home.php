@@ -1,6 +1,6 @@
 <?php
-include_once './validaAcesso.php';
-include_once './query.php';
+include_once "./validaAcesso.php";
+include_once "./query.php";
 
 // print_r($_SESSION['nivelAcesso']);
 ?>
@@ -56,7 +56,7 @@ include_once './query.php';
       
       <?php
       // retorna o estoque por status de movimentação.
-      foreach (buscaEstoque(1) as $key => $value) {
+      foreach (buscaEstoqueDetalhado(1) as $key => $value) {
         print_r('<div class="list-med">');
         foreach ($value as $val) {
           print_r('<div class="list-med-detalhe">' .ucwords($val) . '</div>');
