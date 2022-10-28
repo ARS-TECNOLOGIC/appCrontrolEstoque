@@ -1,4 +1,5 @@
 <?php
+
 include_once './conn/conn.php';
 
 $login = $_POST['login'];
@@ -20,9 +21,9 @@ if (isset($_POST['login']) && $_POST['login'] <> '' && $_POST['password'] <> '')
 
         header('location:home.php');
     } else {
-        header('location:http://localhost/appCrontrolEstoque/');
+        header('location:http:../../');
     }
 } else {
     unset($_POST['login'], $_POST['passowrd']);
-    header('location:http://localhost/appCrontrolEstoque/');
+    header('location:http:../../');
 }

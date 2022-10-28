@@ -42,28 +42,42 @@ include_once "./query.php";
   <div class="main">
     <div class="header-main-conteudo">
 
-      <a class="btn" href="http://localhost/appCrontrolEstoque/src/pages/logout.php">SAIR</a>
+      <a class="btn" href="http:/appCrontrolEstoque/src/pages/logout.php">SAIR</a>
     </div>
     <div class="main-conteudo">
 
       <div class="titulo-list">
         <div class="titulo-list-detalhe">Denominação</div>
         <div class="titulo-list-detalhe">Concentração Composição</div>
-        <div class="titulo-list-detalhe">Data Entrada</div>
+        <div class="titulo-list-detalhe">Forma Farmaceutica</div>
         <div class="titulo-list-detalhe">Data Vencimento</div>
       </div>
         
       
       <?php
       // retorna o estoque por status de movimentação.
-      foreach (buscaEstoqueDetalhado(1) as $key => $value) {
+      $buscaEstoqueDetalhada = buscaEstoqueDetalhado(1);
+      $buscaTotalEstoqueTotal = buscaEstoqueTotal(1);
+
+      foreach ($buscaTotalEstoqueTotal as $key1 => $value1) {
         print_r('<div class="list-med">');
-        foreach ($value as $val) {
-          print_r('<div class="list-med-detalhe">' .ucwords($val) . '</div>');
-        }
+        print_r('<div class="list-med-detalhe">' .ucwords($value1['desc_deno']). '</div>');
+        print_r('<div class="list-med-detalhe">' .ucwords($value1['desc_conce']) . '</div>');
+        print_r('<div class="list-med-detalhe">' .ucwords($value1['desc_forma']) . '</div>');
+        print_r('<div class="list-med-detalhe">' .ucwords($value1['COUNT(*)']) . '</div>');
+        print_r('</div>');
+        foreach ($buscaEstoqueDetalhada as $key => $value){
+          if($value1['id_medicamento'] == $value['id_medicamento']){
+        print_r('<div class="list-med">');
+        print_r('<div class="list-med-detalhe">' .ucwords($value['desc_deno']). '</div>');
+        print_r('<div class="list-med-detalhe">' .ucwords($value['desc_conce']) . '</div>');
+        print_r('<div class="list-med-detalhe">' .ucwords($value['desc_forma']) . '</div>');
+        print_r('<div class="list-med-detalhe">' .ucwords($value['data_vencimento']) . '</div>');
         print_r('</div>');
         
       }
+    }
+  }
       ?>
     </div>
   </div>
