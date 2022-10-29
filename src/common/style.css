@@ -180,6 +180,16 @@ a.btn {
     background-color: #d3e9fd;
 }
 
+.hidden{
+    overflow: hidden;
+    height: 0;
+    border: none;   
+}
+.list-med:hover .hidden{
+    height: auto;
+
+}
+
 .list-med-detalhe {
     display: flex;
     flex: 1;

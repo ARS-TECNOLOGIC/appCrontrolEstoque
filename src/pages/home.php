@@ -68,12 +68,12 @@ include_once "./query.php";
         print_r('</div>');
         foreach ($buscaEstoqueDetalhada as $key => $value){
           if($value1['id_medicamento'] == $value['id_medicamento']){
-        print_r('<div class="list-med">');
+        print_r('<div class="list-med hidden">');
         print_r('<div class="list-med-detalhe">' .ucwords($value['desc_deno']). '</div>');
         print_r('<div class="list-med-detalhe">' .ucwords($value['desc_conce']) . '</div>');
         print_r('<div class="list-med-detalhe">' .ucwords($value['desc_forma']) . '</div>');
         print_r('<div class="list-med-detalhe">' .ucwords($value['data_vencimento']) . '</div>');
-        print_r('</div>');
+ print_r('</div>');
         
       }
     }
