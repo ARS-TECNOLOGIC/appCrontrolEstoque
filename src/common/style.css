@@ -161,7 +161,7 @@ a.btn {
     
 }
 
-.list-med {
+.list-med-total {
     display: flex;
     background-color: #fff;
     margin-bottom: 5px;
@@ -175,19 +175,26 @@ a.btn {
  
 }
 
-
-.list-med:hover {
+.list-med-total:hover {
     background-color: #d3e9fd;
 }
 
-.hidden{
+.list-med-detalhado{
+    display: flex;
+    background-color: #fff;
+    margin-bottom: 5px;
+    width: 98%;
+    height: 0px;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+    border: solid 0.5px #c9c9c9;
+    border-radius: 10px;
     overflow: hidden;
-    height: 0;
-    border: none;   
+    border:0px;
 }
-.list-med:hover .hidden{
-    height: auto;
-
+.list-med-total:hover, div.list-med-detalhado:hover{
+    height:auto;
 }
 
 .list-med-detalhe {
@@ -202,6 +209,7 @@ a.btn {
     font-size: 12px;
     flex-wrap: wrap;
     border-radius: 5px;
+    height:auto;
 }
 
 .list-med-detalhe:hover {

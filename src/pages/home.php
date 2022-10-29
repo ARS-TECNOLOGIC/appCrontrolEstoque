@@ -60,7 +60,7 @@ include_once "./query.php";
       $buscaTotalEstoqueTotal = buscaEstoqueTotal(1);
 
       foreach ($buscaTotalEstoqueTotal as $key1 => $value1) {
-        print_r('<div class="list-med">');
+        print_r('<div class="list-med-total">');
         print_r('<div class="list-med-detalhe">' .ucwords($value1['desc_deno']). '</div>');
         print_r('<div class="list-med-detalhe">' .ucwords($value1['desc_conce']) . '</div>');
         print_r('<div class="list-med-detalhe">' .ucwords($value1['desc_forma']) . '</div>');
@@ -68,7 +68,7 @@ include_once "./query.php";
         print_r('</div>');
         foreach ($buscaEstoqueDetalhada as $key => $value){
           if($value1['id_medicamento'] == $value['id_medicamento']){
-        print_r('<div class="list-med hidden">');
+        print_r('<div class="list-med-detalhado" id="list-med-detalhado">');
         print_r('<div class="list-med-detalhe">' .ucwords($value['desc_deno']). '</div>');
         print_r('<div class="list-med-detalhe">' .ucwords($value['desc_conce']) . '</div>');
         print_r('<div class="list-med-detalhe">' .ucwords($value['desc_forma']) . '</div>');

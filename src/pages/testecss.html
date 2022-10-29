@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .caixa1{
+        border:solid;
+        height: 20px;
+    }
+
+    .hidden{
+        height: 300px;
+        overflow: hidden;
+        background-color: aquamarine;
+    }
+   
+     .caixa1:hover +div.hidden{
+        display: block;
+        border: solid red;
+        height: 500px;
+
+    }
+
+
+</style>
+<body>
+    <div class="caixa1"> caixa 1</div>
+    <div class="hidden" id="hidden1">Testes de oculto</div>
+</body>
+</html>
