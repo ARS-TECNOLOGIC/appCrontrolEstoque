@@ -19,8 +19,8 @@ include_once "./query.php";
     <div class="sideBar">
         <div class="logo-identificador">
             <?php
-      print_r(substr($_SESSION['login'], 0, 1));
-      ?>
+            print_r(substr($_SESSION['login'], 0, 1));
+            ?>
         </div>
         <nav class="menu-principal">
             <ul>
@@ -29,14 +29,10 @@ include_once "./query.php";
                 <li><a href="http://"><img src="../assets/images/icons-menu/saida.png" class="icon">SAIDA</a></li>
                 <li><a href="http://"><img src="../assets/images/icons-menu/cadastro.png" class="icon">CADASTRO</a>
                     <ul class="menu-principal-sub">
-                        <li><a href="http://"><img src="../assets/images/icons-submenu/add-medicamento.png"
-                                    class="iconsub"> Cad. Medicamento</a></li>
-                        <li><a href="http://"><img src="../assets/images/icons-submenu/add-funcionario.png"
-                                    class="iconsub">Cad. Funcionario</a></li>
-                        <li><a href="http://"><img src="../assets/images/icons-submenu/add-unidade-saude.png"
-                                    class="iconsub"> Cad. Unidade Saude</a></li>
-                        <li><a href="http://"><img src="../assets/images/icons-submenu/add-usuario.png"
-                                    class="iconsub">Cad. Usuario</a></li>
+                        <li><a href="http://"><img src="../assets/images/icons-submenu/add-medicamento.png" class="iconsub"> Cad. Medicamento</a></li>
+                        <li><a href="http://"><img src="../assets/images/icons-submenu/add-funcionario.png" class="iconsub">Cad. Funcionario</a></li>
+                        <li><a href="http://"><img src="../assets/images/icons-submenu/add-unidade-saude.png" class="iconsub"> Cad. Unidade Saude</a></li>
+                        <li><a href="http://"><img src="../assets/images/icons-submenu/add-usuario.png" class="iconsub">Cad. Usuario</a></li>
                     </ul>
                 </li>
             </ul>
@@ -59,51 +55,58 @@ include_once "./query.php";
 
 
             <?php
-      // retorna o estoque por status de movimentação.
-      $buscaEstoqueDetalhada = buscaEstoqueDetalhado(1);
-      $buscaTotalEstoqueTotal = buscaEstoqueTotal(1);
+            // retorna o estoque por status de movimentação.
+            $buscaEstoqueDetalhada = buscaEstoqueDetalhado(1);
+            $buscaTotalEstoqueTotal = buscaEstoqueTotal(1);
 
-      foreach ($buscaTotalEstoqueTotal as $key1 => $value1) { 
-           $qtd = $value1['COUNT(*)'];
-          if($qtd <3){
-            $qtd = "red"; 
-          };
-        print_r('
-        <div class="list-med-total">
-        <div class="list-med-detalhe">'.ucwords($value1['desc_deno']).'</div>
-        <div class="list-med-detalhe">'.ucwords($value1['desc_conce']).'</div>
-        <div class="list-med-detalhe">'.ucwords($value1['desc_forma']).'</div>');
-        print_r('<div class="list-med-detal" id='.$qtd.'">'.ucwords($value1['COUNT(*)']).'</div>
-        </div>
+            foreach ($buscaTotalEstoqueTotal as $key1 => $value1) {
+                $qtd = $value1['COUNT(*)'];
+                if ($qtd < 3) {
+                    $nivel = "abaixo";
+                } else {
+                    $nivel = "acima";
+                }
+            ?>
 
-        <div class="box-list-detalhado">
-        <div class="titulo-list">
-        <div class="titulo-list-detalhe">Denominação</div>
-        <div class="titulo-list-detalhe">Concentração Composição</div>
-        <div class="titulo-list-detalhe">Forma Farmaceutica</div>
-        <div class="titulo-list-detalhe">Data Entrada</div>
-        <div class="titulo-list-detalhe">Data Vencimento</div>
-        <div class="titulo-list-detalhe">Saida</div>       
-    </div>');
+                <div class="list-med-total">
+                    <div class="list-med-detalhe"><?php echo (ucwords($value1['desc_deno'])); ?> </div>
+                    <div class="list-med-detalhe"><?php echo (ucwords($value1['desc_conce'])); ?></div>
+                    <div class="list-med-detalhe"><?php echo (ucwords($value1['desc_forma'])); ?></div>
+                    <div class="list-med-detalhe <?php echo ($nivel); ?>"><?php echo (ucwords($value1['COUNT(*)'])) ?></div>
+                </div>
 
-        foreach ($buscaEstoqueDetalhada as $key => $value){
-          if($value1['id_medicamento'] == $value['id_medicamento']){
-        print_r('<div class="list-med-detalhado">');
-        print_r('<div class="list-med-detalhe">' .ucwords($value['desc_deno']). '</div>');
-        print_r('<div class="list-med-detalhe">' .ucwords($value['desc_conce']) . '</div>');
-        print_r('<div class="list-med-detalhe">' .ucwords($value['desc_forma']) . '</div>');
-        print_r('<div class="list-med-detalhe">' .ucwords($value['data_entrada']) . '</div>');
-        print_r('<div class="list-med-detalhe">' .ucwords($value['data_vencimento']) . '</div>');
-        print_r('<div class="list-med-detalhe"><input type="checkbox" name="" id=""></div>');
-        print_r('</div>');
-      }
-    }
-    print_r('</div>');
-  }
-      ?>
-        </div>
+                <div class="box-list-detalhado">
+                    <div class="titulo-list">
+                        <div class="titulo-list-detalhe">Denominação</div>
+                        <div class="titulo-list-detalhe">Concentração Composição</div>
+                        <div class="titulo-list-detalhe">Forma Farmaceutica</div>
+                        <div class="titulo-list-detalhe">Data Entrada</div>
+                        <div class="titulo-list-detalhe">Data Vencimento</div>
+                        <div class="titulo-list-detalhe">Saida</div>
+                    </div>
+
+                <?php
+                foreach ($buscaEstoqueDetalhada as $key => $value) {
+                    if ($value1['id_medicamento'] == $value['id_medicamento']) {
+                        print_r('<div class="list-med-detalhado">');
+                        print_r('<div class="list-med-detalhe">' . ucwords($value['desc_deno']) . '</div>');
+                        print_r('<div class="list-med-detalhe">' . ucwords($value['desc_conce']) . '</div>');
+                        print_r('<div class="list-med-detalhe">' . ucwords($value['desc_forma']) . '</div>');
+                        print_r('<div class="list-med-detalhe">' . ucwords($value['data_entrada']) . '</div>');
+                        print_r('<div class="list-med-detalhe">' . ucwords($value['data_vencimento']) . '</div>');
+                        print_r('<div class="list-med-detalhe"><input type="checkbox" name="" id=""></div>');
+                        print_r('</div>');
+                    }
+                }
+                print_r('</div>');
+            }
+                ?>
+                <button class="registrar-saida" type="submit">RETIRADA</button>
+                </div>
+                
+            </div>
     </div>
-</div>
+    
 </div>
 
 </body>

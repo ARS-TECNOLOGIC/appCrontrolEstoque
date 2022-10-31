@@ -8,13 +8,17 @@
 </head>
 
 <style>
+    body{
+        height: 100%;
+        width: 100%;
+    }
     .caixa1{
         border:solid;
         height: 20px;
     }
 
     .hidden{
-        height: 300px;
+        height: 1200px;
         overflow: hidden;
         background-color: aquamarine;
     }
@@ -22,8 +26,14 @@
      .caixa1:hover +div.hidden{
         display: block;
         border: solid red;
-        height: 500px;
+        height: 1200px;
 
+    }
+
+    button.registrar-saida{
+        position: fixed;
+        bottom: 10px;
+        left: 95%;
     }
 
 
@@ -34,5 +44,6 @@
     <form action="" method="post">
         <input type="checkbox" name="" id="">
     </form>
+    <button class="registrar-saida">Saida</button>
 </body>
 </html>

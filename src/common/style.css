@@ -56,7 +56,6 @@ nav.menu-principal{
     text-decoration: none;
     padding: 10px;
     padding-left: 20px;
-    /* background-color:#6eb3d3; */
     border-radius: 10px 2px;
     border-bottom: solid 0.5px #FFF;
     box-shadow: 0px 3px 5px -2px #3f6c81;
@@ -131,6 +130,7 @@ a.btn {
     align-items: center;
 }
 
+/* Style da barra de titulo CABEÇALHO*/
 .titulo-list{
     display: flex;
     position: sticky;
@@ -159,10 +159,7 @@ a.btn {
     flex-wrap: wrap;
     border-radius: 5px;
 }
-#red{
-    color:red;
-    font-size: 48px;
-}
+/* Style da linha de total */
 .list-med-total {
     display: flex;
     background-color: #fff;
@@ -176,9 +173,54 @@ a.btn {
     border-radius: 10px;
     margin-bottom: 5px;
 }
-.list-med-total:hover {
-    background-color: #d3e9fd;
+.list-med-total:hover .list-med-detalhe:first-child::before{
+    content:"▼";
+    color: #3f6c81;
+    position: relative;
+    left:-20px;
 }
+.list-med-detalhe {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    padding: 10px;
+    margin: 3px 0px;
+    color:#888888;
+    font-size: 12px;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    height:auto;
+}
+.list-med-detalhe:hover {
+    background-color: aliceblue;
+    overflow: visible;
+}
+
+/* Style da caixa de quantidade */
+div.list-med-total div.list-med-detalhe.abaixo{
+    font-weight: bold;
+}div.list-med-total div.list-med-detalhe.abaixo::after{
+    content: " ";
+    width: 10px;
+    height: 10px;
+    border-radius: 50% 50%;
+    background-color:rgb(253, 159, 159);
+    margin-left: 30px;
+}
+div.list-med-total div.list-med-detalhe.acima{
+       font-weight: bold;
+}div.list-med-total div.list-med-detalhe.acima::after{
+    content: " ";
+    width: 10px;
+    height: 10px;
+    border-radius: 50% 50%;
+    background-color:#87c5e4;
+    margin-left: 30px;
+}
+
+/* Style da box que envolve a lista detalhada */
 .box-list-detalhado{
     display: flex;
     flex-direction: column;
@@ -187,22 +229,7 @@ a.btn {
     width: 98%;
     align-items:center;
     height:0px;
-    overflow: hidden;
-   
-}
-
-.list-med-detalhado{
-    display: flex;
-    background-color: #fff;
-    margin-bottom: 5px;
-    width: 98%;
-    height:auto;
-    justify-content: center;
-    align-items: center;
-    border: solid 0.5px #c9c9c9;
-    border-radius: 10px;
-    overflow: hidden;
-    border:0px;
+    overflow: hidden; 
 }
 .list-med-total:hover +div.box-list-detalhado ,div.box-list-detalhado:hover{
     height:auto;  
@@ -215,32 +242,49 @@ a.btn {
     top:0;
     background-color: #b4b4b4;
     box-shadow: none;
+    height:auto;    
 }
-.box-list-detalhado .list-med-detalhado{
-background-color: transparent;
-border-bottom: 0.5px solid #c9c9c9;
-border-radius: 0px;
+.box-list-detalhado .titulo-list .titulo-list-detalhe{
+font-size: 0.7em;
+font-weight: bold;
+
 }
+
+/* Styele linha a linha da lista detalhada */
+.list-med-detalhado{
+    display: flex;
+    margin-bottom: 5px;
+    width: 98%;
+    height:auto;
+    justify-content: center;
+    align-items: center;  
+    overflow: hidden;
+    border:0px;
+    background-color: transparent;
+    border-bottom: 0.5px solid #c9c9c9;
+}
+
 .list-med-detalhado .list-med-detalhe{
     color:#686868;
 }
 
-.list-med-detalhe {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    width: 70px;
-    padding: 10px;
-    margin: 3px 0px;
-    color: rgb(0, 52, 97);
+button.registrar-saida{
+    position: fixed;
+    bottom:10px;
+    left:calc(100% - 110px);
+    width:90px;
+    background-color: #3f6c81;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    line-height: 36px;
     font-size: 12px;
-    flex-wrap: wrap;
-    border-radius: 5px;
-    height:auto;
+    border-radius: 10px;
+    border-bottom:solid #6cb4d6;
+    cursor: pointer;
+    box-shadow: 0px 3px 5px -2px #585858;
+    letter-spacing: 1PX;
 }
-
-.list-med-detalhe:hover {
-    background-color: aliceblue;
-    overflow: visible;
+button.registrar-saida:hover{
+transform: scale(0.9);
 }
