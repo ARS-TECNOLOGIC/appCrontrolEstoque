@@ -231,6 +231,7 @@ div.list-med-total div.list-med-detalhe.acima{
     height:0px;
     overflow: hidden; 
 }
+
 .list-med-total:hover +div.box-list-detalhado ,div.box-list-detalhado:hover{
     height:auto;  
     padding-top: 5px;
@@ -263,9 +264,15 @@ font-weight: bold;
     background-color: transparent;
     border-bottom: 0.5px solid #c9c9c9;
 }
+div.box-list-detalhado div.list-med-detalhado:hover +div.list-med-total{
+    background-color: #585858;
+}
 
 .list-med-detalhado .list-med-detalhe{
     color:#686868;
+}
+.list-med-detalhado .list-med-detalhe:hover{
+    background-color:#f9f9f9;
 }
 
 button.registrar-saida{
@@ -288,3 +295,4 @@ button.registrar-saida{
 button.registrar-saida:hover{
 transform: scale(0.9);
 }
+

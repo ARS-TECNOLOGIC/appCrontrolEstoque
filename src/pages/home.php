@@ -2,6 +2,7 @@
 include_once "./validaAcesso.php";
 include_once "./query.php";
 
+
 // print_r($_SESSION['nivelAcesso']);
 ?>
 
@@ -13,6 +14,7 @@ include_once "./query.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common/style.css">
+    
     <title>Home ControlEstoque</title>
 </head>
 <div class="main-global">
@@ -110,5 +112,5 @@ include_once "./query.php";
 </div>
 
 </body>
-
+<script src="../common/js.js"></script>
 </html>

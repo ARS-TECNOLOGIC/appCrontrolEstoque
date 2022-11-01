@@ -18,7 +18,7 @@
     }
 
     .hidden{
-        height: 1200px;
+        height: 200px;
         overflow: hidden;
         background-color: aquamarine;
     }
@@ -26,9 +26,14 @@
      .caixa1:hover +div.hidden{
         display: block;
         border: solid red;
-        height: 1200px;
+        height: 200px;
 
     }
+
+.hidden:hover div.caixa1{
+    background-color: rgb(202, 8, 138);
+}
+
 
     button.registrar-saida{
         position: fixed;
@@ -36,14 +41,19 @@
         left: 95%;
     }
 
-
 </style>
 <body>
     <div class="caixa1"> caixa 1</div>
-    <div class="hidden" id="hidden1">Testes de oculto</div>
+    <div class="hidden" id="hidden1" onmouseover="this.parentNode.style.color='red'" onmouseout="this.style.color=''">Testes de oculto</div>
     <form action="" method="post">
         <input type="checkbox" name="" id="">
     </form>
     <button class="registrar-saida">Saida</button>
+
+    <script>
+  var selct = document.getElementById('hidden1');
+  function mudar(a)
+    </script>
+
 </body>
 </html>
