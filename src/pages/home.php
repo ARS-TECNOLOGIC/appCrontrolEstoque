@@ -28,7 +28,7 @@ include_once "./query.php";
             <ul>
                 <li><a href="?pg=estoque"><img src="../assets/images/icons-menu/estoque.png" class="icon">ESTOQUE </a>
                 </li>
-                <li><a href="http://"><img src="../assets/images/icons-menu/entrada.png" class="icon">ENTRADA</a></li>
+                <li><a href="?pg=med-entrada"><img src="../assets/images/icons-menu/entrada.png" class="icon">ENTRADA</a></li>
                 <li><a href="http://"><img src="../assets/images/icons-menu/saida.png" class="icon">SAIDA</a></li>
                 <li><a href="http://"><img src="../assets/images/icons-menu/cadastro.png" class="icon">CADASTRO</a>
                     <ul class="menu-principal-sub">
