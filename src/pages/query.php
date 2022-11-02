@@ -24,5 +24,4 @@ function buscaEstoqueTotal($acao){
     return $query;
 }
 
-
 ?>

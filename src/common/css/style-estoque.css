@@ -1,135 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.main-global {
-    display: flex;
-    background-color: rgb(241, 85, 85);
-    width: 100%;
-    min-height:100vh;
-}
-.sideBar {
-    width: 200px;
-    height: auto;
-    background-color: #5f9ebb;
-    border-right:2px solid #3f6c81;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1px;
-}
-
-.logo-identificador {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: solid 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #3f6c81;
-    font-size: 36px;
-    text-transform: capitalize;
-    background-color: #fff;
-    margin-top: 10px;
-}
-nav.menu-principal{
-    width: 100%;
-    margin-top: 30px;
-}
-.menu-principal ul{
-    list-style: none;
-}
-.menu-principal ul li{
-    margin-bottom: 4px;    
-}
-.menu-principal ul li a, .menu-principal-sub li a{
-    font-weight:bold;
-    text-align:left;
-    color:#fff;
-    font-size: 12px;
-    line-height: 24px;
-    display:flex;
-    text-decoration: none;
-    padding: 10px;
-    padding-left: 20px;
-    border-radius: 10px 2px;
-    border-bottom: solid 0.5px #FFF;
-    box-shadow: 0px 3px 5px -2px #3f6c81;
-    align-items: center; 
-}
-.menu-principal-sub{
-    overflow: hidden;
-    height: 0px;
-}
-.menu-principal li:hover .menu-principal-sub{
-    overflow: hidden;
-    height: auto;    
-}
-.menu-principal-sub li a{
-    background-color: #3f6c81;
-}
-
-.menu-principal ul li a img.icon{
-    margin-right: 15px;
-width: 35px;
-}
-.menu-principal-sub img.iconsub{
-    margin-right: 15px;
-width: 35px;
-}
-
-.menu-principal li a:hover{
-    background-color:#87c5e4;
-
-}
-.main {
-    width: 100%;
-    min-height: 100vh;
-    display:flex;
-    flex-direction: column;
-}
-
-.header-main-conteudo {
-    background-color: #3f6c81;
-    height: 50px;
-    position: sticky;
-    top: 0px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 5px;
-}
-
-a.btn {
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
-    background-color: transparent;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    height: 20px;
-    display: flex;
-    padding: 10px;
-    border: 0.5px #fff solid;
-}
-
-.main-conteudo {
-    background-color: #F5F5F5;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 /* Style da barra de titulo CABEÇALHO*/
 .titulo-list{
     display: flex;
@@ -275,7 +143,7 @@ div.box-list-detalhado div.list-med-detalhado:hover +div.list-med-total{
     background-color:#f9f9f9;
 }
 
-button.registrar-saida{
+button.btn-layout-blue{
     position: fixed;
     bottom:10px;
     left:calc(100% - 110px);
@@ -292,7 +160,7 @@ button.registrar-saida{
     box-shadow: 0px 3px 5px -2px #585858;
     letter-spacing: 1PX;
 }
-button.registrar-saida:hover{
-transform: scale(0.9);
+button.btn-layout-blue:active{
+transform: scale(0.94);
 }
 
