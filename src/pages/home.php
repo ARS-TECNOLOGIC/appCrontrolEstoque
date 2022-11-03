@@ -1,8 +1,6 @@
 <?php
 include_once "./validaAcesso.php";
 include_once "./query.php";
-
-
 // print_r($_SESSION['nivelAcesso']);
 ?>
 
@@ -14,6 +12,7 @@ include_once "./query.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../common/css/style-home-sidebar.css">
+
 
     <title>Home ControlEstoque</title>
 </head>
@@ -28,7 +27,8 @@ include_once "./query.php";
             <ul>
                 <li><a href="?pg=estoque"><img src="../assets/images/icons-menu/estoque.png" class="icon">ESTOQUE </a>
                 </li>
-                <li><a href="?pg=med-entrada"><img src="../assets/images/icons-menu/entrada.png" class="icon">ENTRADA</a></li>
+                <li><a href="?pg=med-entrada"><img src="../assets/images/icons-menu/entrada.png"
+                            class="icon">ENTRADA</a></li>
                 <li><a href="http://"><img src="../assets/images/icons-menu/saida.png" class="icon">SAIDA</a></li>
                 <li><a href="http://"><img src="../assets/images/icons-menu/cadastro.png" class="icon">CADASTRO</a>
                     <ul class="menu-principal-sub">
@@ -48,7 +48,7 @@ include_once "./query.php";
     </div>
     <div class="main">
         <div class="header-main-conteudo">
-
+            <?php if(isset($_GET['pg']) && $_GET['pg']=="estoque"){ echo ('<input type="text" id="buscar"></input>');} ?>
             <a class="btn" href="http:/appCrontrolEstoque/src/pages/logout.php">SAIR</a>
         </div>
         <div class="main-conteudo">
@@ -64,7 +64,9 @@ include_once "./query.php";
 <div>
 
 </div>
+<script src="../common/js/jquery.js"></script>
+<script src="../common/js/js.js"></script>
 </body>
-<script src="../common/js.js"></script>
+
 
 </html>

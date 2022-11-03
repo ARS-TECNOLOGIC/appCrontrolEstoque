@@ -1,16 +1,11 @@
 <?php
+//include_once '../conn/conn.php';
+//include '../query.php';
 
-$array = ["a","b","c","d"];
 
-print_r($array);
-
-foreach($array as $key =>$value){ ?>
-   
-   <span>Linha</span>
-  
-  <?php
-    print($value);
-}
-
+//foreach(buscaEstoqueDetalhado(1,"") as $key => $value){
+  //echo ($value['desc_deno'].'</br>');
+//}
 
 ?>
+

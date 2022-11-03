@@ -1,3 +1,4 @@
+<?php include_once './query.php'?>
 <link rel="stylesheet" href="../common/css/style-estoque.css">
 <div class="titulo-list">
     <div class="titulo-list-detalhe">Denominação</div>
@@ -7,9 +8,11 @@
 </div>
 
 <?php
+            
             // retorna o estoque por status de movimentação.
-            $buscaEstoqueDetalhada = buscaEstoqueDetalhado(1);
-            $buscaTotalEstoqueTotal = buscaEstoqueTotal(1);
+            $lik = $_POST['lik'];
+            $buscaEstoqueDetalhada = buscaEstoqueDetalhado(1,$lik);
+            $buscaTotalEstoqueTotal = buscaEstoqueTotal(1,$lik);
 
             foreach ($buscaTotalEstoqueTotal as $key1 => $value1) {
                 $qtd = $value1['COUNT(*)'];
@@ -52,6 +55,7 @@
                 }
                 print_r('</div>');
             }
+            echo ($_GET['lik']);
                 ?>
     <button class="btn-layout-blue" type="submit">RETIRADA</button>
 </div>
