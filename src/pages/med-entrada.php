@@ -1,3 +1,6 @@
+<?php
+include_once './query.php';
+?>
 <h1>Entrada de Medicamento</h1>
 <div>
     <style>
@@ -9,12 +12,18 @@
         }
     </style>
     <form action="" method="post">
-        <label for="select-med">Denominação
-        <select id="select-med">
-            <option value="">Anselmo</option>
-            <option value="">Roberto</option>
-            <option value="">Silva </option>
-        </select>
+        
+    <label for="select-med">
+        <select name="" id="">
+        <?php 
+            
+            $listMed = listaMedicamento();    
+            foreach($listMed as $key => $value){
+                print_r("<option>".$value['desc_deno']."</option>");
+            }   
+      
+     ?>
+         </select>
         </label>
 
     </form>

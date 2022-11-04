@@ -1,7 +1,6 @@
 <?php
+//Valida o acesso.
 include_once "./validaAcesso.php";
-include_once "./query.php";
-// print_r($_SESSION['nivelAcesso']);
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +15,11 @@ include_once "./query.php";
 
     <title>Home ControlEstoque</title>
 </head>
+
 <div class="main-global">
     <div class="sideBar">
         <div class="logo-identificador">
+            <!-- php chama apenas primeira letra do login -->
             <?php
             print_r(substr($_SESSION['login'], 0, 1));
             ?>
@@ -48,10 +49,12 @@ include_once "./query.php";
     </div>
     <div class="main">
         <div class="header-main-conteudo">
+            <!-- php verifica se tem a GET "pg" se for verdadeiro ele inclui o input de buscar -->
             <?php if(isset($_GET['pg']) && $_GET['pg']=="estoque"){ echo ('<input type="text" id="buscar"></input>');} ?>
             <a class="btn" href="http:/appCrontrolEstoque/src/pages/logout.php">SAIR</a>
         </div>
         <div class="main-conteudo">
+            <!-- php verifica se existe a GET"pg" e faz o include de acordo com o valor de GET -->
             <?php 
                 if(isset($_GET['pg'])){
                     include_once './'.$_GET['pg'].'.php';
@@ -64,9 +67,10 @@ include_once "./query.php";
 <div>
 
 </div>
+<!-- Chama o JS -->
 <script src="../common/js/jquery.js"></script>
 <script src="../common/js/js.js"></script>
 </body>
 
 
-</html>
+</html> 
