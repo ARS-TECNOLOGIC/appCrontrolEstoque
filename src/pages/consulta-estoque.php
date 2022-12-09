@@ -55,7 +55,7 @@
                 }
                 print_r('</div>');
             }
-            echo ($_GET['lik']);
+            echo ($_POST['lik']);
                 ?>
     <button class="btn-layout-blue" type="submit">RETIRADA</button>
 </div>
