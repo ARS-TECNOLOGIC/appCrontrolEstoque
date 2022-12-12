@@ -26,11 +26,12 @@ function upconsulta(){
     setTimeout(atualizaConsulta,500);
     
 }
-
 //Monitora os eventos de input na caixa de busca
 var busca = document.querySelector("#buscar");
+if(busca){
 busca.addEventListener('input',upconsulta);
-
 // Function- inicia a tela com o estoque total.
 upconsulta();
+};
+
 

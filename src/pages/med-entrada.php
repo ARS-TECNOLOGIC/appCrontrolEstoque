@@ -1,15 +1,9 @@
+<link rel="stylesheet" href="../common/css/style-med-entrada.css">
 <?php
 include_once './query.php';
 ?>
 <h1>Entrada de Medicamentos</h1>
 <div>
-    <style>
-        label {
-            border: solid;
-            padding: 20px;
-            display: block;
-        }
-    </style>
     <form action="" method="post">
 
         <label for="select-med">
