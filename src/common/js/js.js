@@ -34,4 +34,9 @@ busca.addEventListener('input',upconsulta);
 upconsulta();
 };
 
+function addLista(){
+    alert("incluso!");
+    var entradaInput = document.querySelectorAll('form')
+};
+
 
