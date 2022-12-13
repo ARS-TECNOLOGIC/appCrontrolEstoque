@@ -17,7 +17,7 @@ include_once './query.php';
 
                 $listMed = listaMedicamento();
                 foreach ($listMed as $key => $value) {
-                    print_r("<option" . $value['id_medicamento'] . ">" . ucwords($value['desc_deno']) . " " . substr($value['desc_conce'], 0, 80) . "</option>");
+                    print_r("<option value=" .$value['id_medicamento']. ">" . ucwords($value['desc_deno']) . " " . substr($value['desc_conce'], 0, 80) . "</option>");
                 }
                 ?>
             </select>

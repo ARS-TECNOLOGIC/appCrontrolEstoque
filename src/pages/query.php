@@ -32,15 +32,11 @@ function listaMedicamento(){
     
     global $conn;
 
-    $query = $conn->prepare('SELECT d.desc_deno,c.desc_conce, f.desc_forma FROM medicamento m JOIN med_denominacao d ON m.id_deno = d.id_deno JOIN med_concentracao_composicao c ON m.id_conce = c.id_conce JOIN med_forma_farmaceutica f ON m.id_forma_farm = f.id_forma_farm WHERE 1 ORDER BY d.desc_deno ASC');
+    $query = $conn->prepare('SELECT m.id_medicamento,d.desc_deno,c.desc_conce, f.desc_forma FROM medicamento m JOIN med_denominacao d ON m.id_deno = d.id_deno JOIN med_concentracao_composicao c ON m.id_conce = c.id_conce JOIN med_forma_farmaceutica f ON m.id_forma_farm = f.id_forma_farm WHERE 1 ORDER BY d.desc_deno ASC');
     $query->execute();  
     $query= $query->fetchAll(PDO::FETCH_ASSOC);
     return $query;
 }
-
-
-
-
 
 
 ?>

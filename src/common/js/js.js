@@ -34,9 +34,19 @@ busca.addEventListener('input',upconsulta);
 upconsulta();
 };
 
+//cria lista para dar entrada BD
+var lista = [];
 function addLista(){
-    alert("incluso!");
-    var entradaInput = document.querySelectorAll('form')
+ 
+    
+    var input = document.getElementById('form-entrada-med');
+    var inputs = input.querySelectorAll('input, select');
+    inputs.forEach(function(a){
+        //lista.unshift
+        
+        
+        console.log(a.value)});
+
 };
 
 
