@@ -35,18 +35,21 @@ upconsulta();
 };
 
 //cria lista para dar entrada BD
-var lista = [];
+var lista =[];
+
 function addLista(){
- 
     
+
     var input = document.getElementById('form-entrada-med');
     var inputs = input.querySelectorAll('input, select');
-    inputs.forEach(function(a){
-        //lista.unshift
-        
-        
-        console.log(a.value)});
+   
+    var listainterna = [];
+    inputs.forEach(function(a){listainterna.unshift(a.value)});
+   
+   lista.unshift(listainterna);  
+   lista.forEach(function(b){console.log(b)});
+   
 
-};
+    };
 
 
