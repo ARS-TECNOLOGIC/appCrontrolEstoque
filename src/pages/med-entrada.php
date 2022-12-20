@@ -45,3 +45,9 @@ include_once './query.php';
     </form>
     <button onclick="addLista()"> Adicionar a lista</button>
 </div>
+<div id="lista-entrada-med">
+    Lista:
+    <ul id="lista-med">
+    
+    </ul>
+</div>

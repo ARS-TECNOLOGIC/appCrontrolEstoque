@@ -40,16 +40,21 @@ var lista =[];
 function addLista(){
     
 
-    var input = document.getElementById('form-entrada-med');
-    var inputs = input.querySelectorAll('input, select');
-   
-    var listainterna = [];
-    inputs.forEach(function(a){listainterna.unshift(a.value)});
-   
-   lista.unshift(listainterna);  
+    var form = document.getElementById('form-entrada-med');
+    var input = form.querySelectorAll('input');
+    var select = form.querySelectorAll('select');
+    
+    var listaInterna = [];
+    
+    input.forEach(function(a){listaInterna.unshift(a.value)});
+   listaInterna.unshift(select[0].options[select[0].selectedIndex].text);
+
+   lista.unshift(listaInterna);  
    lista.forEach(function(b){console.log(b)});
    
+   var listaMed = document.getElementById('lista-med');
+    var li = document.createElement('li');
 
-    };
 
 
+}
