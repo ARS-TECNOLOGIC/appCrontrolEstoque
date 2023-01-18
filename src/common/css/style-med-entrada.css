@@ -1,8 +1,38 @@
-*{font-family: 'Arial', Helvetica, sans-serif;}
+* {
+    font-family: 'Arial', Helvetica, sans-serif;
+}
 
-label{
-    border:1px solid;
+label {
+    border: 1px solid;
     padding: 20px;
     display: block;
 }
-    
+
+
+div#lista {
+    padding: 5px;
+    border: solid 1px;
+    margin-bottom: 200px;
+    font-size: 0.9rem;
+
+}
+
+div#lista-cabecalho {
+    display: flex;
+}
+
+div.item {
+    display: flex;
+}
+
+div.item div {
+    width: 150px;
+    border: solid 1px #ccc;
+}
+
+div#lista-cabecalho div {
+    width: 150px;
+    background-color: red;
+    border: solid 1px #000;
+
+}

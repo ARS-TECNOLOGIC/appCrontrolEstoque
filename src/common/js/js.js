@@ -51,10 +51,20 @@ function addLista(){
 
    lista.unshift(listaInterna);  
    lista.forEach(function(b){console.log(b)});
+    updateLista();
    
-   var listaMed = document.getElementById('lista-med');
-    var li = document.createElement('li');
+}
 
-
-
+ 
+ function updateLista(){
+    
+    var listaMed = document.getElementById('lista-med');
+    listaMed.innerHTML='';
+    
+    lista.forEach(function(c){
+        
+        var item = c[0]+' '+c[1]+' '+c[2]+' '+c[3]+' '+c[4];
+        listaMed.insertAdjacentHTML('afterbegin',"<div class='item'><div>"+c[4]+'</div><div>'+c[0]+'</div><div> '+c[3]+'</div><div>'+c[2]+'</div><div>'+c[1]+"</div></div>");
+});   
+   
 }

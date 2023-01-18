@@ -1,23 +1,25 @@
 <link rel="stylesheet" href="../common/css/style-med-entrada.css">
 <?php
 include_once './query.php';
+echo date_default_timezone_get();
+date_default_timezone_set('America/Sao_Paulo');
 ?>
 <h1>Entrada de Medicamentos</h1>
 <div>
     <form action="" method="post" id="form-entrada-med">
-    <label for="responsavel-med">    
-    Responsavel:
-    <input type="text" disabled value="<?php echo ucfirst($_SESSION['login']);?>" id="reponsavel-med">
-    </label>    
-    <label for="select-med">
-        Medicamento:
+        <label for="responsavel-med">
+            Responsavel:
+            <input type="text" disabled value="<?php echo ucfirst($_SESSION['login']); ?>" id="reponsavel-med">
+        </label>
+        <label for="select-med">
+            Medicamento:
             <select name="" id="select-med" require>
                 <option value="" disabled selected hidden>Digite o nome do medicamento!</option>
                 <?php
 
                 $listMed = listaMedicamento();
                 foreach ($listMed as $key => $value) {
-                    print_r("<option value=" .$value['id_medicamento']. ">" . ucwords($value['desc_deno']) . " " . substr($value['desc_conce'], 0, 80) . "</option>");
+                    print_r("<option value=" . $value['id_medicamento'] . ">" . ucwords($value['desc_deno']) . " " . substr($value['desc_conce'], 0, 80) . "</option>");
                 }
                 ?>
             </select>
@@ -28,7 +30,7 @@ include_once './query.php';
         </label>
         <label for="entrada-med">
             Data de Entrada:
-            <input type="" name="" disabled id="entrada-med" value="<?php echo date("d/m/Y");?>">
+            <input type="" name="" disabled id="entrada-med" value="<?php echo date("d/m/Y"); ?>">
         </label>
         <label for="vencimento-med">
             vencimento:
@@ -46,8 +48,22 @@ include_once './query.php';
     <button onclick="addLista()"> Adicionar a lista</button>
 </div>
 <div id="lista-entrada-med">
-    Lista:
-    <ul id="lista-med">
+    Lista: <style>
+
+    </style>
+    <div id="lista">
+        <div id="lista-cabecalho">
+            <div>RESPONSAVEL</div>
+            <div>MEDICAMENTO</div>
+            <div>QUANTIDADE</div>
+            <div>DATA ENTRADA</div>
+            <div>VENCIMENTO</div>
+            <div>UNIDADE DE ORIGEM</div>
+    </div>
+        <div id="lista-med">
+
     
-    </ul>
+
+
+    </div>
 </div>
