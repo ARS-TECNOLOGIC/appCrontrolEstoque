@@ -20,7 +20,7 @@ include_once "./validaAcesso.php";
         <div class="logo-identificador">
             <!-- php chama apenas primeira letra do login -->
             <?php
-            print_r(substr($_SESSION['login'], 0, 1));
+            print_r(substr($_SESSION['fun_nome'], 0, 1));
             ?>
         </div>
         <nav class="menu-principal">

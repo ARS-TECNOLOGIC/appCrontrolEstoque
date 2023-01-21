@@ -9,7 +9,7 @@ date_default_timezone_set('America/Sao_Paulo');
     <form action="" method="post" id="form-entrada-med">
         <label for="responsavel-med">
             Responsavel:
-            <input type="text" disabled value="<?php echo ucfirst($_SESSION['login']); ?>" id="reponsavel-med">
+            <input type="text" disabled value="<?php echo ucfirst($_SESSION['fun_nome']); ?>" id="reponsavel-med">
         </label>
         <label for="select-med">
             Medicamento:
@@ -28,9 +28,9 @@ date_default_timezone_set('America/Sao_Paulo');
             Quantidade:
             <input type="number" min="0" max="100" name="" id="quantidade-med" value="teste">
         </label>
-        <label for="entrada-med">
+        <label for="data-entrada-med">
             Data de Entrada:
-            <input type="" name="" disabled id="entrada-med" value="<?php echo date("d/m/Y"); ?>">
+            <input type="" name="" disabled id="data-entrada-med" value="<?php echo date("d/m/Y"); ?>">
         </label>
         <label for="vencimento-med">
             vencimento:
@@ -39,7 +39,8 @@ date_default_timezone_set('America/Sao_Paulo');
         <label for="Unidade-origem-med">
             Unidade de Origem:
             <select name="" id="select-med">
-                <option value="" disabled selected hidden>Digite o nome da unidade de origem</option>
+                <option value="11" disabled selected hidden>Digite o nome da unidade de origem</option>
+                <option value="55"> teste</option>
                 <?php
                 ?>
             </select>
@@ -53,17 +54,20 @@ date_default_timezone_set('America/Sao_Paulo');
     </style>
     <div id="lista">
         <div id="lista-cabecalho">
-            <div>RESPONSAVEL</div>
+            <div>CODIGO</div>
             <div>MEDICAMENTO</div>
             <div>QUANTIDADE</div>
             <div>DATA ENTRADA</div>
             <div>VENCIMENTO</div>
             <div>UNIDADE DE ORIGEM</div>
-    </div>
+            <div>RESPONSAVEL</div>
+
+
+        </div>
         <div id="lista-med">
 
-    
 
 
+
+        </div>
     </div>
-</div>
