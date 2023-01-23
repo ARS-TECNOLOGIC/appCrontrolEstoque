@@ -57,6 +57,12 @@ function addLista() {
   updateLista();
 }
 
+function delItemList(item) {
+  lista.splice(item,1);
+  updateLista();
+}
+
+
 function updateLista() {
   var listaMed = document.getElementById("lista-med");
   listaMed.innerHTML = "";
@@ -87,7 +93,10 @@ function updateLista() {
         c[0] +
         "</div><div>" +
         c[6] +
-        "</div></div>"
+        "</div><div> <button onclick='delItemList("+lista.indexOf(c)+")'>Teste</button>"
+        
+   
     );
+    
   });
 }

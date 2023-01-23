@@ -9,3 +9,5 @@
 
 ?>
 
+<button onclick="delItemList()"></button>
+
